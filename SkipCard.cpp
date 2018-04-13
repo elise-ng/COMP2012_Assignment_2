@@ -24,7 +24,7 @@ bool SkipCard::operator^(const Card &t) const {
 }
 
 void SkipCard::castEffect(Player *&currentPlayer, CardPile &drawPile, CardPile &discardPile) {
-  // TODO
+  currentPlayer = currentPlayer->getNextPlayer();
 }
 
 void SkipCard::serialize(std::ostream &os) const {
