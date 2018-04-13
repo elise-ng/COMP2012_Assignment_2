@@ -10,14 +10,16 @@
 NumberCard::NumberCard(int number, Color color) : Card(color, number), number(number) {
 }
 
-NumberCard::~NumberCard() : ~Card() {
+NumberCard::~NumberCard() {
+  this->Card::~Card();
 };
 
 bool NumberCard::operator^(const Card& t) const {
-  if (NumberCard & numT = dynamic_cast<NumberCard>(t) && numT->number == this->number) {
-    return true;
+  if (typeid(t) == typeid(NumberCard)) {
+    const NumberCard& numT = dynamic_cast<const NumberCard&>(t);
+    return numT.number == this->number || this->Card::operator^(t);
   } else {
-    return this->Card::operator^(t)
+    return this->Card::operator^(t);
   }
 }
 
@@ -25,19 +27,19 @@ void NumberCard::castEffect(Player*& currentPlayer, CardPile& drawPile, CardPile
   // no action for number card
 }
 
-void NumberCard::serialize(std::ostream& os) {
+void NumberCard::serialize(std::ostream& os) const {
   switch (this->color) {
     case Color::red:
-      os << "R";
+      os << 'R';
       break;
     case Color::blue:
-      os << "B";
+      os << 'B';
       break;
     case Color::green:
-      os << "G";
+      os << 'G';
       break;
     case Color::yellow:
-      os << "Y";
+      os << 'Y';
       break;
     default:
       break;

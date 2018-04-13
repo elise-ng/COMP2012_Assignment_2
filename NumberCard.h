@@ -9,15 +9,15 @@
 #define NUMBERCARD_H_
 
 #include "Card.h"
-using namespace std;
 
 class NumberCard : public Card {
 public:
   NumberCard(int, Color);
-  ~NumberCard();
-  virtual bool operator^(const Card& t) const;
-  virtual void castEffect(Player*& currentPlayer, CardPile& drawPile, CardPile& discardPile);
-  virtual void serialize(ostream& os) const;
+  virtual ~NumberCard() override;
+  virtual bool operator^(const Card& t) const override;
+  virtual void castEffect(Player*& currentPlayer, CardPile& drawPile, CardPile& discardPile) override;
+protected:
+  virtual void serialize(ostream& os) const override;
 private:
   const int number;
 };
