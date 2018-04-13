@@ -28,16 +28,16 @@ void NumberCard::castEffect(Player*& currentPlayer, CardPile& drawPile, CardPile
 void NumberCard::serialize(std::ostream& os) {
   switch (this->color) {
     case Color::red:
-      os << "B";
+      os << "R";
       break;
     case Color::blue:
       os << "B";
       break;
     case Color::green:
-      os << "B";
+      os << "G";
       break;
     case Color::yellow:
-      os << "B";
+      os << "Y";
       break;
     default:
       break;
