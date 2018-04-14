@@ -1,24 +1,25 @@
 /*
- * SkipCard.h
+ * WildCard.h
  *
- *  Created on: Feb 2, 2018
+ *  Created on: Feb 6, 2018
  *      Author: kevinw
  */
 
-#ifndef SKIPCARD_H_
-#define SKIPCARD_H_
+#ifndef WILDCARD_H_
+#define WILDCARD_H_
 
-#import "Card.h"
+#include "Card.h"
 
-class SkipCard : public Card {
+class WildCard : public Card {
 public:
-  SkipCard(Color);
-  virtual ~SkipCard() override;
+  WildCard();
+  virtual ~WildCard() = default;
   virtual bool operator^(const Card& t) const override;
   virtual void castEffect(Player*& currentPlayer, CardPile& drawPile, CardPile& discardPile) override;
+  virtual void init() override;
 protected:
   virtual void serialize(ostream& os) const override;
 private:
 };
 
-#endif /* SKIPCARD_H_ */
+#endif /* WILDCARD_H_ */

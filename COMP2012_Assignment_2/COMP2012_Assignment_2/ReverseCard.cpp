@@ -11,10 +11,6 @@
 ReverseCard::ReverseCard(Color color) : Card(color, POINT_REVERSECARD) {
 }
 
-ReverseCard::~ReverseCard() {
-  this->Card::~Card();
-}
-
 bool ReverseCard::operator^(const Card &t) const {
   if (typeid(t) == typeid(ReverseCard)) {
     return true;
@@ -24,7 +20,7 @@ bool ReverseCard::operator^(const Card &t) const {
 }
 
 void ReverseCard::castEffect(Player*& currentPlayer, CardPile& drawPile, CardPile& discardPile) {
-  Player* playerPtrArray[4] = { currentPlayer };
+  Player* playerPtrArray[4] = { currentPlayer, nullptr, nullptr, nullptr };
   int playerCount = 1;
   Player* playerPtr = currentPlayer->getNextPlayer();
   while (playerPtr != currentPlayer) {
@@ -33,7 +29,9 @@ void ReverseCard::castEffect(Player*& currentPlayer, CardPile& drawPile, CardPil
     playerPtr = playerPtr->getNextPlayer();
   }
   for (int i = 0; i < playerCount; i += 1) {
-    playerPtrArray[i]->nextPlayer = playerPtrArray[(i - 1) % playerCount];
+    // fix -ve mod behavior of c++
+    int index = ((i - 1) % playerCount + playerCount) % playerCount;
+    playerPtrArray[i]->nextPlayer = playerPtrArray[index];
   }
 }
 

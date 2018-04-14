@@ -10,10 +10,6 @@
 NumberCard::NumberCard(int number, Color color) : Card(color, number), number(number) {
 }
 
-NumberCard::~NumberCard() {
-  this->Card::~Card();
-};
-
 bool NumberCard::operator^(const Card& t) const {
   if (typeid(t) == typeid(NumberCard)) {
     const NumberCard& numT = dynamic_cast<const NumberCard&>(t);

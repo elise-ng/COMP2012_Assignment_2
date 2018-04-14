@@ -4,10 +4,6 @@
 DrawFourCard::DrawFourCard() : WildCard() {
 }
 
-DrawFourCard::~DrawFourCard() {
-  this->WildCard::~WildCard();
-}
-
 bool DrawFourCard::operator^(const Card& t) const {
   return true;
 }

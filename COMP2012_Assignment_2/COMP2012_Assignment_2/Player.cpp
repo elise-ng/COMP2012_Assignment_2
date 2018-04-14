@@ -15,7 +15,11 @@ ostream& operator<<(ostream& os, const Player& h) {
 	return os;
 }
 
-Player::Player(string name, Player* previous) : name(name) {
+Player::Player(string name, Player* previous) : name(name), nextPlayer(this) {
+    if (previous != nullptr) {
+        this->nextPlayer = previous->nextPlayer;
+        previous->nextPlayer = this;
+    }
 }
 
 void Player::drawCard(CardPile &drawPile, CardPile &discardPile, int number_of_cards) {

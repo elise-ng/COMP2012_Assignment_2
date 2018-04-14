@@ -1,25 +1,24 @@
 /*
- * DrawFourCard.h
+ * DrawTwoCard.h
  *
- *  Created on: Feb 6, 2018
+ *  Created on: Feb 5, 2018
  *      Author: kevinw
  */
 
-#ifndef DRAWFOURCARD_H_
-#define DRAWFOURCARD_H_
+#ifndef DRAWTWOCARD_H_
+#define DRAWTWOCARD_H_
 
-#include "WildCard.h"
+#include "SkipCard.h"
 
-class DrawFourCard : public WildCard {
+class DrawTwoCard : public SkipCard {
 public:
-  DrawFourCard();
-  virtual ~DrawFourCard() override;
+  DrawTwoCard(Color);
+  virtual ~DrawTwoCard() = default;
   virtual bool operator^(const Card& t) const override;
   virtual void castEffect(Player*& currentPlayer, CardPile& drawPile, CardPile& discardPile) override;
-  virtual void init() override;
 protected:
   virtual void serialize(ostream& os) const override;
 private:
 };
 
-#endif /* DRAWFOURCARD_H_ */
+#endif /* DRAWTWOCARD_H_ */

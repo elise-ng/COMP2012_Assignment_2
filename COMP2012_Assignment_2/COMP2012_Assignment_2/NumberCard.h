@@ -1,25 +1,25 @@
 /*
- * WildCard.h
+ * NumberCard.h
  *
- *  Created on: Feb 6, 2018
+ *  Created on: Jan 29, 2018
  *      Author: kevinw
  */
 
-#ifndef WILDCARD_H_
-#define WILDCARD_H_
+#ifndef NUMBERCARD_H_
+#define NUMBERCARD_H_
 
 #include "Card.h"
 
-class WildCard : public Card {
+class NumberCard : public Card {
 public:
-  WildCard();
-  virtual ~WildCard() override;
+  NumberCard(int, Color);
+  virtual ~NumberCard() = default;
   virtual bool operator^(const Card& t) const override;
   virtual void castEffect(Player*& currentPlayer, CardPile& drawPile, CardPile& discardPile) override;
-  virtual void init() override;
 protected:
   virtual void serialize(ostream& os) const override;
 private:
+  const int number;
 };
 
-#endif /* WILDCARD_H_ */
+#endif /* NUMBERCARD_H_ */

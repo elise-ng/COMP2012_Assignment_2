@@ -11,10 +11,6 @@
 WildCard::WildCard() : Card(Color::meta, POINT_WILDCARD) {
 }
 
-WildCard::~WildCard() {
-  this->Card::~Card();
-}
-
 bool WildCard::operator^(const Card& t) const {
   return true;
 }
