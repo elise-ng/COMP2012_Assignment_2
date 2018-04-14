@@ -15,9 +15,9 @@
 		D96B16FA208191E3001A572E /* CardPile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96B16E2208191E2001A572E /* CardPile.cpp */; };
 		D96B16FC208191E3001A572E /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96B16E7208191E2001A572E /* Player.cpp */; };
 		D96B16FE208191E3001A572E /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = D96B16EA208191E2001A572E /* Makefile */; };
-		D96B1700208191E3001A572E /* testReverseCard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96B16EE208191E3001A572E /* testReverseCard.cpp */; };
 		D96B1701208191E3001A572E /* SkipCard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96B16F0208191E3001A572E /* SkipCard.cpp */; };
 		D96B1702208191E3001A572E /* WildCard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96B16F2208191E3001A572E /* WildCard.cpp */; };
+		D96B17062081986E001A572E /* game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96B16E8208191E2001A572E /* game.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -191,10 +191,10 @@
 				D96B16F7208191E3001A572E /* DrawFourCard.cpp in Sources */,
 				D96B16FC208191E3001A572E /* Player.cpp in Sources */,
 				D96B1702208191E3001A572E /* WildCard.cpp in Sources */,
+				D96B17062081986E001A572E /* game.cpp in Sources */,
 				D96B16FE208191E3001A572E /* Makefile in Sources */,
 				D96B16F4208191E3001A572E /* Card.cpp in Sources */,
 				D96B16F6208191E3001A572E /* ReverseCard.cpp in Sources */,
-				D96B1700208191E3001A572E /* testReverseCard.cpp in Sources */,
 				D96B16F8208191E3001A572E /* DrawTwoCard.cpp in Sources */,
 				D96B16FA208191E3001A572E /* CardPile.cpp in Sources */,
 			);
