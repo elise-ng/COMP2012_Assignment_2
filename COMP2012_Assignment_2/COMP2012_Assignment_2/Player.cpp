@@ -38,6 +38,7 @@ void Player::drawCard(CardPile &drawPile, CardPile &discardPile, int number_of_c
 Card* Player::playCardAfter(const Card* topCard, int index) {
 	const Card* card = this->getCard(index);
 	if (card == nullptr || !(*topCard ^ *card)) { return nullptr; }
+    if (this->getSize() == 1 && typeid(card) != typeid(NumberCard)) { return nullptr; }
 	return this->removeCard(index);
 }
 
