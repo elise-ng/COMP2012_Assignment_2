@@ -25,7 +25,7 @@ Player::Player(string name, Player* previous) : CardPile(), nextPlayer(this), na
 void Player::drawCard(CardPile &drawPile, CardPile &discardPile, int number_of_cards) {
 	while (number_of_cards > 0) {
 		if (drawPile.getSize() <= 0) {
-			for (int i = discardPile.getSize()-1-1; i >= 0; i += 1) {
+			for (int i = discardPile.getSize()-1-1; i >= 0; i -= 1) {
 				drawPile += discardPile.removeCard(i);
 			}
 			drawPile.shuffle();
