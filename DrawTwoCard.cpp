@@ -8,7 +8,7 @@
 #include "DrawTwoCard.h"
 #include "Player.h"
 
-DrawTwoCard::DrawTwoCard(Color color) : Card(color, POINT_DRAWTWOCARD) {
+DrawTwoCard::DrawTwoCard(Color color) : SkipCard(color) {
 }
 
 DrawTwoCard::~DrawTwoCard() {
