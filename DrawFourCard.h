@@ -13,6 +13,7 @@
 class DrawFourCard : public WildCard {
 public:
   DrawFourCard();
+  virtual ~DrawFourCard() override;
   virtual bool operator^(const Card& t) const override;
   virtual void castEffect(Player*& currentPlayer, CardPile& drawPile, CardPile& discardPile) override;
   virtual void init() override;
