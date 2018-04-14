@@ -15,7 +15,7 @@ ostream& operator<<(ostream& os, const Player& h) {
 	return os;
 }
 
-Player::Player(string name, Player* previous) : name(name), nextPlayer(this) {
+Player::Player(string name, Player* previous) : nextPlayer(this), name(name) {
     if (previous != nullptr) {
         this->nextPlayer = previous->nextPlayer;
         previous->nextPlayer = this;
