@@ -26,9 +26,11 @@ void DrawFourCard::castEffect(Player*& currentPlayer, CardPile& drawPile, CardPi
       currentPlayer->drawCard(drawPile, discardPile, 4);
     } else {
       currentPlayer->getNextPlayer()->drawCard(drawPile, discardPile, 6);
+      currentPlayer = currentPlayer->getNextPlayer();
     }
   } else {
     currentPlayer->getNextPlayer()->drawCard(drawPile, discardPile, 4);
+    currentPlayer = currentPlayer->getNextPlayer();
   }
 }
 
